@@ -1,0 +1,408 @@
+/* ============================================================
+   THINK LAYER — Global Design System & Variables (Warm Editorial Theme)
+   ============================================================ */
+
+:root {
+  /* Warm Design System Tokens */
+  --bg: #FFFCF8;
+  --bg-2: #F5EFE6;
+  --ink: #111111;
+  --ink-muted: #7A7067;
+  --border: #E8E0D5;
+  --accent: #C2622D;
+  --accent-bg: #FEF3EC;
+  --white: #FFFFFF;
+
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+
+  /* Backward Compatibility Mappings */
+  --color-dark: var(--ink);
+  --color-light: var(--bg);
+  --color-cream: var(--bg-2);
+  --color-card: var(--white);
+  --color-accent: var(--accent);
+  --color-accent-hover: #D8723B;
+  --color-accent-soft: var(--accent-bg);
+  --color-accent-ring: rgba(194, 98, 45, 0.1);
+  --color-accent-dark-text: var(--accent);
+
+  --text-primary: var(--ink);
+  --text-secondary: var(--ink-muted);
+  --text-muted: var(--ink-muted);
+
+  --border-light: var(--border);
+  --border-dark: var(--border);
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 6px 24px rgba(0, 0, 0, 0.08);
+
+  --font-heading: var(--font-serif);
+
+  --container-max: 1080px;
+  --navbar-max: 1080px;
+  --section-padding: 110px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ----------------------------------------------------------
+   1. Reset & Base (Light theme enforcement)
+   ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-light);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-primary);
+  background-color: var(--color-light);
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+/* Headings font rules matching design system */
+h1, h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ----------------------------------------------------------
+   2. Navbar (Sticky warm layout)
+   ---------------------------------------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 24px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  transition: all 0.3s var(--ease-out-expo);
+  border-bottom: 1px solid transparent;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--navbar-max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar-logo {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-logo span {
+  color: var(--color-accent);
+}
+
+.navbar.scrolled {
+  background-color: var(--color-card);
+  border-bottom-color: var(--border-light);
+  box-shadow: 0 1px 0 var(--border-light);
+  height: 72px;
+  padding: 12px 24px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.glass-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 0;
+}
+
+.nav-links a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-book,
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 8px;
+  transition: all 0.3s var(--ease-out-expo);
+  white-space: nowrap;
+}
+
+.nav-book {
+  background-color: var(--color-dark); /* Ink black button */
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.nav-book:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.nav-cta {
+  background: transparent;
+  border: 1px solid var(--color-dark);
+  color: var(--color-dark);
+}
+
+.nav-cta:hover {
+  background-color: var(--color-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ----------------------------------------------------------
+   3. Sections, Spacing & Container
+   ---------------------------------------------------------- */
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.section-light {
+  background-color: var(--color-light);
+}
+
+.section-cream {
+  background-color: var(--color-cream);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.section-headline {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.section-headline .faint {
+  color: var(--text-muted);
+}
+
+.section-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center .section-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----------------------------------------------------------
+   4. Footer (Dark background ink footer)
+   ---------------------------------------------------------- */
+.footer {
+  background-color: var(--color-dark);
+  padding: 80px 0 40px;
+  color: #ffffff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo span {
+  color: var(--color-accent);
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.6;
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+.footer-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.footer-col a {
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.footer-col a:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+/* Animations */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+
+.anim-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

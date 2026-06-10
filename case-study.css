@@ -1,0 +1,334 @@
+/* ============================================================
+   THINK LAYER — Case Study Detail Page Styles (Warm Editorial Layout)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. Case Hero (Premium Warm Editorial Header)
+   ---------------------------------------------------------- */
+.case-hero {
+  padding: 160px 0 72px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--color-light);
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+  transition: all 0.3s var(--ease-out-expo);
+  border-bottom: 1px solid transparent;
+}
+
+.back-link svg {
+  transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
+}
+
+.back-link:hover svg {
+  transform: translateX(-4px);
+}
+
+.case-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.case-logo-lg {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+}
+
+.case-title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 400; /* Regular serif weight Lora */
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.case-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* ----------------------------------------------------------
+   2. Case Meta Strip (Warm paper card)
+   ---------------------------------------------------------- */
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 28px 32px;
+  background-color: var(--color-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  margin-top: 48px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meta-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.meta-value {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.meta-value a {
+  color: var(--color-accent);
+  border-bottom: 1.5px solid transparent;
+}
+
+.meta-value a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+/* ----------------------------------------------------------
+   3. Case Content
+   ---------------------------------------------------------- */
+.case-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.case-section {
+  margin-bottom: 48px;
+}
+
+.case-section h3 {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.case-section p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.case-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.case-section ul li {
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.case-section ul li::before {
+  content: '◇';
+  color: var(--color-accent);
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Timeline grid cards */
+.timeline-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.timeline-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+}
+
+.timeline-phase {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.timeline-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Insight Box (Light warm border highlight in accent) */
+.case-insight {
+  padding: 32px;
+  background-color: var(--color-cream);
+  border-left: 3px solid var(--color-accent); /* Terracotta left border */
+  border-radius: 0 12px 12px 0;
+  margin-top: 48px;
+  box-shadow: var(--shadow-card);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+}
+
+.case-insight h4 {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.case-insight p {
+  font-size: 17px;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ----------------------------------------------------------
+   4. Final CTA Section (Light Card)
+   ---------------------------------------------------------- */
+.cta-final-section {
+  padding: 80px 0;
+  background-color: var(--color-light);
+  border-top: 1px solid var(--border-light);
+}
+
+.cta-final-card {
+  text-align: center;
+  padding: 64px 32px;
+  background-color: var(--color-cream);
+  border-radius: 12px;
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.cta-final-card h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.cta-final-card p {
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+}
+
+.cta-final-card .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  height: 44px;
+  padding: 0 24px;
+  border-radius: 8px;
+  background-color: var(--color-dark);
+  transition: all 0.3s var(--ease-out-expo);
+  white-space: nowrap;
+  border: none;
+}
+
+.cta-final-card .btn-primary:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* ----------------------------------------------------------
+   5. Responsive Styles
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  .case-hero {
+    padding: 120px 0 48px;
+  }
+  .case-title-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .case-meta {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 24px;
+    gap: 16px;
+  }
+  .timeline-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .cta-final-card {
+    padding: 48px 20px;
+  }
+  .cta-final-card h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-meta {
+    grid-template-columns: 1fr;
+  }
+  .case-title {
+    font-size: 28px;
+  }
+}
